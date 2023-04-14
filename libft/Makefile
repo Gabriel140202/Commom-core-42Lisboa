@@ -15,7 +15,8 @@ SRCS = ft_atoi.c\
 		ft_strlcat.c\
 		ft_strnstr.c\
 		ft_memset.c\
-		ft_bzero.c
+		ft_bzero.c\
+		ft_memmove.c
            
 INCLUDE = libft.h
 
