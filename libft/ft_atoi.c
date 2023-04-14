@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 15:27:14 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/14 12:43:40 by gfrancis         ###   ########.fr       */
+/*   Created: 2023/04/14 11:57:12 by gfrancis          #+#    #+#             */
+/*   Updated: 2023/04/14 12:09:18 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-int		main(void)
+int	ft_atoi(char *str)
 {
-	char	*str;
-	char	*allocated;
+	int	i;
+	int	result;
+	int	sign;
 
-	str = "Hello World with malloc()";
-	printf("original  : base  : $%s$ @ %p\n", str, str);
-	allocated = strdup(str);
-	printf("copied    : alloc : $%s$ @ %p\n", allocated, allocated);
-	allocated = ft_strdup(str);
-	printf("ft_copied : alloc : $%s$ @ %p\n", allocated, allocated);
+	sign = 1;
+	i = 0;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+		if (str[i] == '-')
+		{
+			sign *= -1;
+			i++;
+		}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (int)str[i] - '0';
+		++i;
+	}
+	return (result * sign);
 }

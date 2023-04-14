@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 15:27:14 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/14 12:43:40 by gfrancis         ###   ########.fr       */
+/*   Created: 2023/04/13 17:51:40 by gfrancis          #+#    #+#             */
+/*   Updated: 2023/04/14 11:48:52 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-int		main(void)
+#include <stdio.h>
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*str;
-	char	*allocated;
+	size_t	i;
+	size_t	j;
 
-	str = "Hello World with malloc()";
-	printf("original  : base  : $%s$ @ %p\n", str, str);
-	allocated = strdup(str);
-	printf("copied    : alloc : $%s$ @ %p\n", allocated, allocated);
-	allocated = ft_strdup(str);
-	printf("ft_copied : alloc : $%s$ @ %p\n", allocated, allocated);
+	i = 0;
+	if (*little == '\0')
+		return ((char *)big);
+	while (big[i] != '\0' && i < len)
+	{
+		j = 0;
+		while ((big[i + j] != '\0') && (big[i + j] == little[j]) && (i + j < len))
+		{
+			if (little[j + 1] == '\0')
+				return ((char*)&big[i]);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
