@@ -6,7 +6,7 @@
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:42:03 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/14 12:32:14 by gfrancis         ###   ########.fr       */
+/*   Updated: 2023/04/14 15:30:59 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 int	ft_atoi(char *str);
 char	*ft_strdup(char *src);
+int	ft_toupper(int ch);
+int ft_tolower(int ch);
 
 #endif

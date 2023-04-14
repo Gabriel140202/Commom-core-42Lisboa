@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 12:26:32 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/14 15:35:05 by gfrancis         ###   ########.fr       */
+/*   Created: 2023/04/14 14:32:59 by gfrancis          #+#    #+#             */
+/*   Updated: 2023/04/14 15:38:37 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strdup(char *src)
+int	ft_toupper(int ch)
 {
-	int		index;
-	char	*dest;
-	char	*d;
-
-	index = 0;
-	d = ((dest = (char *)malloc(ft_strlen(src) * sizeof(char) + 1)));
-	if (!d)
+	if (ch >= 97 && ch <= 122)
 	{
-		return (0);
+		ch -= 32;
 	}
-	while (src[index])
-	{
-		dest[index] = src[index];
-		index++;
-	}
-	dest[index] = '\0';
-	return (dest);
+	return (ch);
 }
