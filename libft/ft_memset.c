@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 15:27:14 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/14 14:59:09 by gfrancis         ###   ########.fr       */
+/*   Created: 2023/04/14 16:34:38 by gfrancis          #+#    #+#             */
+/*   Updated: 2023/04/14 17:41:15 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-int		main(void)
-{
-	char c1 = 'b';
-	char c2 = 'A';
+void	*ft_memset(void *s, int c, size_t n)
+{	
+	size_t			i;
+	unsigned char	*p;
 
-	printf("%c", ft_tolower(c2));
-	printf("%c", ft_toupper(c1));
+	i = 0;
+	p = s;
+	while (n--)
+	{
+		p[i] = (unsigned char)c;
+		i++;
+	}
+	return (p);
 }

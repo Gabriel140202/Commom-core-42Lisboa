@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 11:57:12 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/14 16:20:47 by gfrancis         ###   ########.fr       */
+/*   Created: 2023/04/14 17:01:24 by gfrancis          #+#    #+#             */
+/*   Updated: 2023/04/14 17:39:45 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_atoi(const char *str)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-	int	result;
-	int	sign;
+	size_t			i;
+	unsigned char	*p;
 
-	sign = 1;
 	i = 0;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	p = s;
+	while (n--)
 	{
-		if (str[i] == '-')
-		{
-			sign *= -1;
-		}
+		p[i] = '\0';
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (int)str[i] - '0';
-		++i;
-	}
-	return (result * sign);
 }

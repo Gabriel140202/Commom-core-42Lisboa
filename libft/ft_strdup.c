@@ -6,13 +6,13 @@
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 12:26:32 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/14 15:35:05 by gfrancis         ###   ########.fr       */
+/*   Updated: 2023/04/14 17:47:55 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		index;
 	char	*dest;
