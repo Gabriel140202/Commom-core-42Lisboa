@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 18:01:14 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/17 12:25:14 by gfrancis         ###   ########.fr       */
+/*   Created: 2023/04/17 11:51:10 by gfrancis          #+#    #+#             */
+/*   Updated: 2023/04/17 12:12:23 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
+	unsigned char	*buffer;
+	unsigned char	c2;
+	size_t			i;
 
-	i = n;
-	if (dest == src)
-		return (dest);
-	else if (dest > src)
+	buffer = (unsigned char *)s;
+	c2 = (unsigned char)c;
+	i = 0;
+	while (i < n)
 	{
-		while (i > 0)
-		{
-			i--;
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		}
+		if (*buffer == c2)
+			return (buffer);
+		i++;
+		buffer++;
 	}
-	else
-	{
-		i = 0;
-		while (i < n)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
-	}
-	return ((unsigned char *)dest);
+	return (NULL);
 }
