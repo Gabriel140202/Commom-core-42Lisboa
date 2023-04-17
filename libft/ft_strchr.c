@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 11:37:32 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/17 15:19:04 by gfrancis         ###   ########.fr       */
+/*   Created: 2023/04/17 15:19:09 by gfrancis          #+#    #+#             */
+/*   Updated: 2023/04/17 15:37:01 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int			i;
-	unsigned char			*buffer1;
-	unsigned char			*buffer2;
+	int	i;
 
-	i = n;
-	buffer1 = (unsigned char *) src;
-	buffer2 = (unsigned char *) dest;
-	while (i > 0 && (src || dest))
+	i = 0;
+	while (s[i] != c && s[i] != '\0')
+		i++;
+	if (s[i] == '\0')
 	{
-		i--;
-		*(buffer2 + i) = *(buffer1 + i);
+		if (c != '\0')
+			return (NULL);
+		else
+			return ((char *)&s[i]);
 	}
-	return (dest);
+	return ((char *)&s[i]);
 }

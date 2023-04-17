@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 11:37:32 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/17 15:19:04 by gfrancis         ###   ########.fr       */
+/*   Created: 2023/04/17 12:33:42 by gfrancis          #+#    #+#             */
+/*   Updated: 2023/04/17 12:38:36 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, int n)
 {
-	unsigned int			i;
-	unsigned char			*buffer1;
-	unsigned char			*buffer2;
+	int				i;
+	unsigned char	*buffer1;
+	unsigned char	*buffer2;
 
-	i = n;
-	buffer1 = (unsigned char *) src;
-	buffer2 = (unsigned char *) dest;
-	while (i > 0 && (src || dest))
-	{
-		i--;
-		*(buffer2 + i) = *(buffer1 + i);
-	}
-	return (dest);
+	buffer1 = (unsigned char *)s1;
+	buffer2 = (unsigned char *)s2;
+	i = 0;
+	if (n == 0)
+		return (0);
+	while ((buffer1[i] == buffer2[i]) && i < n - 1)
+		i++;
+	return (buffer1[i] - buffer2[i]);
 }
