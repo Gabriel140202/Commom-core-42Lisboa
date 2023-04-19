@@ -6,7 +6,7 @@
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:16:18 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/19 13:22:38 by gfrancis         ###   ########.fr       */
+/*   Updated: 2023/04/19 15:06:34 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ int	total_words(char const *s, char c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c && s[i - 1] != c)
+		if (s[i] == c && s[i - 1] != c && s[i - 1])
 			words++;
 		i++;
 	}
 	if (s[i - 1] != c)
 		words += 1;
-	printf("%d\n", words);
 	return (words);
 }
 
@@ -68,18 +67,13 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	if (s[0] == '\0')
 	{
-		string = (char **)malloc(sizeof(char *) + 1);
+		string = (char **)malloc(sizeof(char *));
 		string[0] = NULL;
 		return (string);
 	}
 	string = (char **)malloc((total_words(s, c) + 1) * sizeof(char *));
+	if (!string)
+		return (NULL);
 	write_string (s, c, string);
 	return (string);
-}
-
-int	main(void)
-{
-	char	**fruits = ft_split("  tripouille  42  ", ' ');
-	for (int i = 0; fruits[i] != NULL; i++)
-    	printf("%s\n", fruits[i]);
 }
