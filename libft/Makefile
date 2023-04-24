@@ -30,48 +30,47 @@ SRCS = ft_atoi.c\
 		ft_split.c\
 		ft_strmapi.c\
 		ft_striteri.c
-           
+#		ft_putchar_fd.c\
+		ft_putendl_fd.c\
+		ft_putnbr_fd.c\
+		ft_putstr_fd.c
+
+BONUS = ft_lstadd_back.c\
+		ft_lstlast.c\
+		ft_lstadd_front.c\
+		ft_lstdelone.c\
+		ft_lstnew.c\
+		ft_lstsize.c
+
 INCLUDE = libft.h
 
 OBJ = $(SRCS:.c=.o)
 
+BONUS_O = $(BONUS:.c=.o)
+
 CC = gcc
 
-CFLAGS = -Wall    \
-         -Wextra  \
-         -Werror  \
-
-GREEN = 	\033[0;32m
-YELLOW = 	\033[0;33m
-RED = 		\033[0;31m
-RESET = 	\033[0m
+CFLAGS = -Wall -Wextra -Werror  
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDE)
-		@echo "$(YELLOW)[Compiling Libft...] $(RESET)"
 		@ar -rcs $(NAME) $(OBJ)
-		@ar -rcs $(NAME)
-		@echo "$(GREEN)[Libft Compiled!] $(RESET)"
 
-mandatory: $(OBJ) $(INCLUDE)
-			@echo "$(YELLOW)[Compiling_Mandatory Libft...] $(RESET)"
-			@ar -rcs $(NAME) $(OBJ)
-			@echo "$(GREEN)[Libft_Mandatory Compiled!] $(RESET)"
+bonus: $(NAME) $(BONUS_O)
+		@ar -rcs $(NAME) $(BONUS_O)
 
 %.o: %.c $(INCLUDE)
 		@$(CC) $(CFLAGS) -c $< -o $@
 
 clean: 
-		@rm -rf $(OBJ)
-		@echo "$(GREEN)[Libft Cleaned] $(RESET)"
+		@rm -rf $(OBJ) $(BONUS_O)
 
 fclean:	
-		@rm -rf $(OBJ) $(NAME)
-		@echo "$(GREEN)[Libft Full Cleaned] $(RESET)"
+		@rm -rf $(OBJ) $(NAME) $(BONUS_O)
 
 re: fclean all
 
-remandatory: fclean mandatory
+rebonus: fclean bonus
 
-.PHONY: all mandatory clean fclean re remandatory 
+#.PHONY: all clean fclean re  
