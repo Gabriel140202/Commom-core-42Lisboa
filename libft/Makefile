@@ -40,7 +40,9 @@ BONUS = ft_lstadd_back.c\
 		ft_lstadd_front.c\
 		ft_lstdelone.c\
 		ft_lstnew.c\
-		ft_lstsize.c
+		ft_lstsize.c\
+		ft_lstclear.c\
+		ft_lstiter.c
 
 INCLUDE = libft.h
 
@@ -73,4 +75,4 @@ re: fclean all
 
 rebonus: fclean bonus
 
-#.PHONY: all clean fclean re  
+.PHONY: all clean fclean re rebonus   
