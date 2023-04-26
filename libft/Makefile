@@ -42,7 +42,8 @@ BONUS = ft_lstadd_back.c\
 		ft_lstnew.c\
 		ft_lstsize.c\
 		ft_lstclear.c\
-		ft_lstiter.c
+		ft_lstiter.c\
+		ft_lstmap.c
 
 INCLUDE = libft.h
 

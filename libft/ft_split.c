@@ -6,7 +6,7 @@
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 10:16:18 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/19 15:06:34 by gfrancis         ###   ########.fr       */
+/*   Updated: 2023/04/26 11:28:21 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,3 +77,19 @@ char	**ft_split(char const *s, char c)
 	write_string (s, c, string);
 	return (string);
 }
+/*int main(void)
+{
+    char const *s = "";
+    char c = 'z';
+    char **result = ft_split(s, c);
+    
+    for (int i = 0; result[i] != NULL; i++)
+    {
+        printf("%s\n", result[i]);
+        free(result[i]);
+    }
+
+    free(result);
+
+    return (0);
+}*/
