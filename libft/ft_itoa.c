@@ -6,7 +6,7 @@
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:58:41 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/18 17:30:24 by gfrancis         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:50:42 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		result[0] = '0';
 	result[numlen] = '\0';
-	while (numlen >= 0 && (unsigned int)n > 0)
+	while (numlen > 0 && (unsigned int)n > 0)
 	{
 		result[numlen - 1] = ((unsigned int)n % 10) + 48;
 		n = (unsigned int)n / 10;

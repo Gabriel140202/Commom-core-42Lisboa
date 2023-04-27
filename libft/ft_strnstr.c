@@ -6,13 +6,11 @@
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 17:51:40 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/14 15:36:59 by gfrancis         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:54:04 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

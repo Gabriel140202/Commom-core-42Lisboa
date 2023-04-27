@@ -6,11 +6,11 @@
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 17:01:24 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/14 17:39:45 by gfrancis         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:55:34 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
