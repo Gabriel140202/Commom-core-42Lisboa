@@ -6,7 +6,7 @@
 /*   By: gfrancis <gfrancis@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:23:41 by gfrancis          #+#    #+#             */
-/*   Updated: 2023/04/17 17:10:46 by gfrancis         ###   ########.fr       */
+/*   Updated: 2023/05/02 11:19:10 by gfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (s == NULL || fd < 0)
+		return ;
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);

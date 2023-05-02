@@ -51,7 +51,7 @@ OBJ = $(SRCS:.c=.o)
 
 BONUS_O = $(BONUS:.c=.o)
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror  
 
